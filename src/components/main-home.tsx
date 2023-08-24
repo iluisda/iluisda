@@ -20,7 +20,7 @@ const Hero = ({
   };
   return (
     <>
-      <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl ">
+      <h1 className="scroll-m-20 text-4xl font-extrabold tracking-normal lg:text-5xl ">
         {welcome}
       </h1>
       <h4 className="scroll-m-20 text-xl font-light tracking-tight border-b mb-2 text-muted-foreground">

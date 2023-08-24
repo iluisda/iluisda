@@ -6,6 +6,8 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import { useLocale } from "next-intl";
 import { notFound } from "next/navigation";
+import { NextIntlClientProvider } from "next-intl";
+
 // Font files can be colocated inside of `app`
 const sfFont = localFont({
   src: [
@@ -32,18 +34,21 @@ export const metadata: Metadata = {
   description: "Frontend Developer | Personal Portfolio",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
-  params,
+  params: { locale },
 }: {
   children: React.ReactNode;
   params: any;
 }) {
-  const locale = useLocale();
-  // Show a 404 error if the user requests an unknown locale
-  if (params.locale !== locale) {
+  let messages;
+  try {
+    messages = (await import(`../../messages/${locale}.json`)).default;
+  } catch (error) {
+    // Show a 404 error if the user requests an unknown locale
     notFound();
   }
+
   return (
     <html lang={locale} suppressHydrationWarning>
       <body
@@ -52,9 +57,11 @@ export default function RootLayout({
           sfFont.className
         )}
       >
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <Layout locale={locale}>{children}</Layout>
-        </ThemeProvider>
+        <NextIntlClientProvider locale={locale} messages={messages}>
+          <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+            <Layout locale={locale}>{children}</Layout>
+          </ThemeProvider>
+        </NextIntlClientProvider>
       </body>
     </html>
   );

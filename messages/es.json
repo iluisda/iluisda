@@ -3,5 +3,11 @@
     "welcome": "Hola! Soy Luis",
     "sign": "Desarrollador Frontend",
     "sentence": "Cuidadosamente enfocado en código limpio y mejores prácticas para crear experiencias digitales fluidas. Mi enfoque en el diseño centrado en el usuario eleva las interfaces a cautivadores recorridos de elegancia y funcionalidad."
+  },
+  "Languages": {
+    "language": "Lenguaje",
+    "spanish": "Español",
+    "english": "Ingles",
+    "portuguese": "Portugues"
   }
 }
