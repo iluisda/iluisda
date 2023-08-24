@@ -17,6 +17,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { useTranslations } from "next-intl";
 
 const MainNav = ({ locale }: { locale: string }) => {
   const getFlag = () => {
@@ -34,6 +35,7 @@ const MainNav = ({ locale }: { locale: string }) => {
     }
     return result;
   };
+  const t = useTranslations("Languages");
   return (
     <header className="w-full h-14 print:hidden z-10">
       <div className="fixed w-full backdrop-blur-xl dark:backdrop-blur-md ">
@@ -45,9 +47,47 @@ const MainNav = ({ locale }: { locale: string }) => {
             </Link>
 
             <div className="flex items-center gap-4">
-              <Button size="icon" variant="ghost" asChild>
-                <span>{getFlagEmoji(getFlag())}</span>
-              </Button>
+              <DropdownMenu>
+                <DropdownMenuTrigger id="lang">
+                  <Button size="icon" variant="ghost" asChild>
+                    <span className="text-lg">{getFlagEmoji(getFlag())}</span>
+                  </Button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent>
+                  <DropdownMenuLabel>
+                    &#128069; {t("language")}
+                  </DropdownMenuLabel>
+                  <DropdownMenuSeparator />
+                  <DropdownMenuItem id="us">
+                    <Link
+                      href={"/"}
+                      locale={"en"}
+                      className="font-medium w-full"
+                    >
+                      {getFlagEmoji("US")} {t("english")}
+                    </Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem id="es">
+                    <Link
+                      href={"/"}
+                      locale={"es"}
+                      className="font-medium w-full"
+                    >
+                      {getFlagEmoji("ES")} {t("spanish")}
+                    </Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem id="br">
+                    <Link
+                      href={"/"}
+                      locale={"pt"}
+                      className="font-medium w-full"
+                    >
+                      {getFlagEmoji("BR")} {t("portuguese")}
+                    </Link>
+                  </DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
+
               <ThemeToggle />
 
               <ul className="flex gap-2">
@@ -64,36 +104,13 @@ const MainNav = ({ locale }: { locale: string }) => {
                   );
                 })}
               </ul>
-              <DropdownMenu>
-                <DropdownMenuTrigger id="lang">
-                  <Avatar>
-                    <AvatarImage
-                      src={"../../assets/meta/default.png"}
-                      alt="iluisda"
-                    />
-                    <AvatarFallback>L</AvatarFallback>
-                  </Avatar>
-                </DropdownMenuTrigger>
-                <DropdownMenuContent>
-                  <DropdownMenuLabel>&#128069; Language</DropdownMenuLabel>
-                  <DropdownMenuSeparator />
-                  <DropdownMenuItem id="us">
-                    <Link href={"/"} locale={"en"} className="font-medium">
-                      {getFlagEmoji("US")} English
-                    </Link>
-                  </DropdownMenuItem>
-                  <DropdownMenuItem id="es">
-                    <Link href={"/"} locale={"es"} className="font-medium">
-                      {getFlagEmoji("ES")} Spanish
-                    </Link>
-                  </DropdownMenuItem>
-                  <DropdownMenuItem id="br">
-                    <Link href={"/"} locale={"pt"} className="font-medium">
-                      {getFlagEmoji("BR")} Portuguese
-                    </Link>
-                  </DropdownMenuItem>
-                </DropdownMenuContent>
-              </DropdownMenu>
+              <Avatar>
+                <AvatarImage
+                  src={"../../assets/meta/default.png"}
+                  alt="iluisda"
+                />
+                <AvatarFallback>L</AvatarFallback>
+              </Avatar>
             </div>
           </Shell>
         </Container>
