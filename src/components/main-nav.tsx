@@ -9,6 +9,15 @@ import { socialsConfig } from "@/config/socials";
 import { Icons } from "@/components/icons";
 import Link from "next-intl/link";
 import { getFlagEmoji } from "@/lib/utils";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+
 const MainNav = ({ locale }: { locale: string }) => {
   const getFlag = () => {
     let result;
@@ -55,15 +64,36 @@ const MainNav = ({ locale }: { locale: string }) => {
                   );
                 })}
               </ul>
-              <Avatar
-              //   style={{ backgroundColor: "rgba(0, 0, 0, 0.24)" }}
-              >
-                <AvatarImage
-                  src={"../../assets/meta/default.png"}
-                  alt="iluisda"
-                />
-                <AvatarFallback>L</AvatarFallback>
-              </Avatar>
+              <DropdownMenu>
+                <DropdownMenuTrigger id="lang">
+                  <Avatar>
+                    <AvatarImage
+                      src={"../../assets/meta/default.png"}
+                      alt="iluisda"
+                    />
+                    <AvatarFallback>L</AvatarFallback>
+                  </Avatar>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent>
+                  <DropdownMenuLabel>&#128069; Language</DropdownMenuLabel>
+                  <DropdownMenuSeparator />
+                  <DropdownMenuItem id="us">
+                    <Link href={"/"} locale={"en"} className="font-medium">
+                      {getFlagEmoji("US")} English
+                    </Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem id="es">
+                    <Link href={"/"} locale={"es"} className="font-medium">
+                      {getFlagEmoji("ES")} Spanish
+                    </Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem id="br">
+                    <Link href={"/"} locale={"pt"} className="font-medium">
+                      {getFlagEmoji("BR")} Portuguese
+                    </Link>
+                  </DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
             </div>
           </Shell>
         </Container>
