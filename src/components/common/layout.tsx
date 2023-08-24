@@ -7,12 +7,13 @@ import Footer from "../main-footer";
 interface Props {
   className?: string;
   children?: React.ReactNode;
+  locale: string;
 }
 
-const Layout: FC<Props> = ({ children, className }) => {
+const Layout: FC<Props> = ({ children, className, locale }) => {
   return (
     <div className="flex flex-col min-h-screen">
-      <MainNav />
+      <MainNav locale={locale} />
       <main className="flex-1">
         <Container className={className}>{children}</Container>
       </main>

@@ -1,4 +1,4 @@
-import type { ValidIcon } from "@/components/icons";
+import type { ValidIcon } from "../components/icons";
 
 type Social = {
   title: string;

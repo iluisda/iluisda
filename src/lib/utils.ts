@@ -24,3 +24,10 @@ export const motion_animations = {
       },
   },
 };
+export const getFlagEmoji = (countryCode:any) => {
+  const codePoints = countryCode
+    .toUpperCase()
+    .split('')
+    .map((char:any) =>  127397 + char.charCodeAt());
+  return String.fromCodePoint(...codePoints);
+}

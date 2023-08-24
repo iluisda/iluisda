@@ -1,15 +1,30 @@
 "use client";
 
-import Link from "next/link";
-import { Shell } from "./shell";
-import ThemeToggle from "./theme-toggle";
+import { Shell } from "@/components/shell";
+import ThemeToggle from "@/components/theme-toggle";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import Container from "./common/container";
-import { Button } from "./ui/button";
+import Container from "@/components/common/container";
+import { Button } from "@/components/ui/button";
 import { socialsConfig } from "@/config/socials";
-import { Icons } from "./icons";
-
-const MainNav = () => {
+import { Icons } from "@/components/icons";
+import Link from "next-intl/link";
+import { getFlagEmoji } from "@/lib/utils";
+const MainNav = ({ locale }: { locale: string }) => {
+  const getFlag = () => {
+    let result;
+    switch (locale) {
+      case "pt":
+        result = "BR";
+        break;
+      case "en":
+        result = "US";
+        break;
+      default:
+        result = "ES";
+        break;
+    }
+    return result;
+  };
   return (
     <header className="w-full h-14 print:hidden z-10">
       <div className="fixed w-full backdrop-blur-xl dark:backdrop-blur-md ">
@@ -21,7 +36,11 @@ const MainNav = () => {
             </Link>
 
             <div className="flex items-center gap-4">
+              <Button size="icon" variant="ghost" asChild>
+                <span>{getFlagEmoji(getFlag())}</span>
+              </Button>
               <ThemeToggle />
+
               <ul className="flex gap-2">
                 {socialsConfig.map(({ title, href, icon }) => {
                   const Icon = Icons[icon];
@@ -39,7 +58,10 @@ const MainNav = () => {
               <Avatar
               //   style={{ backgroundColor: "rgba(0, 0, 0, 0.24)" }}
               >
-                <AvatarImage src={"assets/meta/default.png"} alt="iluisda" />
+                <AvatarImage
+                  src={"../../assets/meta/default.png"}
+                  alt="iluisda"
+                />
                 <AvatarFallback>L</AvatarFallback>
               </Avatar>
             </div>

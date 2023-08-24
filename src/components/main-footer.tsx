@@ -1,6 +1,6 @@
 import React from "react";
 
-import Link from "next/link";
+import Link from "next-intl/link";
 
 import Container from "./common/container";
 
@@ -24,6 +24,29 @@ const Footer = () => {
                 </Link>
               </li>
             ))}
+          </ul>
+          <ul className="md:space-y-0 md:space-x-2 md:flex">
+            <li>
+              {/* <Button size="icon" variant="ghost" asChild> */}
+              <Link href={"/"} locale={"en"} className="font-medium">
+                {"en"}
+              </Link>
+              {/* </Button> */}
+            </li>
+            <li>
+              {/* <Button size="icon" variant="ghost" asChild> */}
+              <Link href={"/"} locale={"es"} className="font-medium">
+                {"es"}
+              </Link>
+              {/* </Button> */}
+            </li>
+            <li>
+              {/* <Button size="icon" variant="ghost" asChild> */}
+              <Link href={"/"} locale={"pt"} className="font-medium">
+                {"pt"}
+              </Link>
+              {/* </Button> */}
+            </li>
           </ul>
         </div>
 

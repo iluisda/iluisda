@@ -4,7 +4,8 @@ import { cn } from "@/lib/utils";
 import "@/styles/globals.css";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-
+import { useLocale } from "next-intl";
+import { notFound } from "next/navigation";
 // Font files can be colocated inside of `app`
 const sfFont = localFont({
   src: [
@@ -19,7 +20,7 @@ const sfFont = localFont({
       style: "normal",
     },
     {
-      path: "./../../public/fonts/sf-pro-display_bold.woff2",
+      path: "../../public/fonts/sf-pro-display_bold.woff2",
       weight: "700",
       style: "normal",
     },
@@ -33,11 +34,18 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
+  params,
 }: {
   children: React.ReactNode;
+  params: any;
 }) {
+  const locale = useLocale();
+  // Show a 404 error if the user requests an unknown locale
+  if (params.locale !== locale) {
+    notFound();
+  }
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang={locale} suppressHydrationWarning>
       <body
         className={cn(
           "min-h-screenHeightWithoutHeader bg-background antialiased",
@@ -45,7 +53,7 @@ export default function RootLayout({
         )}
       >
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <Layout>{children}</Layout>
+          <Layout locale={locale}>{children}</Layout>
         </ThemeProvider>
       </body>
     </html>
