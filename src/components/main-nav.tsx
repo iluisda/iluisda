@@ -49,8 +49,13 @@ const MainNav = ({ locale }: { locale: string }) => {
             <div className="flex items-center gap-4">
               <DropdownMenu>
                 <DropdownMenuTrigger id="lang">
-                  <Button size="icon" variant="ghost" asChild>
-                    <span className="text-lg">{getFlagEmoji(getFlag())}</span>
+                  <Button
+                    className="text-xl"
+                    size="icon"
+                    variant="ghost"
+                    asChild
+                  >
+                    <span>{getFlagEmoji(getFlag())}</span>
                   </Button>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent>
@@ -62,7 +67,7 @@ const MainNav = ({ locale }: { locale: string }) => {
                     <Link
                       href={"/"}
                       locale={"en"}
-                      className="font-medium w-full"
+                      className="font-medium w-full "
                     >
                       {getFlagEmoji("US")} {t("english")}
                     </Link>

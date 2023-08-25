@@ -51,12 +51,7 @@ export default async function RootLayout({
 
   return (
     <html lang={locale} suppressHydrationWarning>
-      <body
-        className={cn(
-          "min-h-screenHeightWithoutHeader bg-background antialiased",
-          sfFont.className
-        )}
-      >
+      <body className={cn("bg-background antialiased", sfFont.className)}>
         <NextIntlClientProvider locale={locale} messages={messages}>
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
             <Layout locale={locale}>{children}</Layout>

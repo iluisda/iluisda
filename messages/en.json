@@ -9,5 +9,10 @@
     "spanish": "Spanish",
     "english": "English",
     "portuguese": "Portuguese"
+  },
+  "Navigation": {
+    "home": "home",
+    "blog": "blog",
+    "cv": "cv"
   }
 }
