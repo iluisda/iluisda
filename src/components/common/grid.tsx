@@ -2,7 +2,7 @@ import React from "react";
 import cn from "classnames";
 
 const styles = {
-  border: "border-gray-300/50 dark:border-gray-700/50",
+  border: "border-gray-400/50 dark:border-gray-700/50",
 };
 
 const Grid = ({ children }: { children?: React.ReactNode }) => {

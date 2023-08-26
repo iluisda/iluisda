@@ -72,7 +72,12 @@ export default async function RootLayout({
 
   return (
     <html lang={locale} className="scroll-smooth" suppressHydrationWarning>
-      <body className={cn("bg-background antialiased", sfFont.className)}>
+      <body
+        className={cn(
+          "bg-gradient-to-b from-white to-gray-200 dark:from-neutral-800 dark:to-neutral-950 antialiased",
+          sfFont.className
+        )}
+      >
         <NextIntlClientProvider locale={locale} messages={messages}>
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
             <Layout locale={locale}>{children}</Layout>

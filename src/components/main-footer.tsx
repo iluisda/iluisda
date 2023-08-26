@@ -15,11 +15,14 @@ const Footer = () => {
   return (
     <footer className="print:hidden">
       <Container className="text-gray-600 dark:text-gray-400">
-        <div className="border-b my-2">
+        <div className="border-b border-b-neutral-600/50 my-2">
           <ul className="flex justify-start space-x-4 my-2">
             {paths.map(({ label, href }) => (
               <li key={href}>
-                <Link href={href} className="font-light hover:text-black">
+                <Link
+                  href={href}
+                  className="font-light hover:text-black dark:hover:text-white"
+                >
                   {label}
                 </Link>
               </li>
