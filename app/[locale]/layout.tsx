@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils";
 import "@/styles/globals.css";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-import { useLocale } from "next-intl";
+
 import { notFound } from "next/navigation";
 import { NextIntlClientProvider } from "next-intl";
 
@@ -50,7 +50,7 @@ export default async function RootLayout({
   }
 
   return (
-    <html lang={locale} suppressHydrationWarning>
+    <html lang={locale} className="scroll-smooth" suppressHydrationWarning>
       <body className={cn("bg-background antialiased", sfFont.className)}>
         <NextIntlClientProvider locale={locale} messages={messages}>
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
