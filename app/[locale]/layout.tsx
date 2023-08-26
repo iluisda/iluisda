@@ -12,6 +12,22 @@ import { NextIntlClientProvider } from "next-intl";
 const sfFont = localFont({
   src: [
     {
+      path: "../../public/fonts/sf-pro-display_thin.woff2",
+      weight: "100",
+      style: "normal",
+    },
+    {
+      path: "../../public/fonts/sf-pro-display_ultralight.woff2",
+      weight: "200",
+      style: "normal",
+    },
+    {
+      path: "../../public/fonts/sf-pro-display_light.woff2",
+      weight: "300",
+      style: "normal",
+    },
+
+    {
       path: "../../public/fonts/sf-pro-display_regular.woff2",
       weight: "400",
       style: "normal",
@@ -19,6 +35,11 @@ const sfFont = localFont({
     {
       path: "../../public/fonts/sf-pro-display_medium.woff2",
       weight: "500",
+      style: "normal",
+    },
+    {
+      path: "../../public/fonts/sf-pro-display_semibold.woff2",
+      weight: "600",
       style: "normal",
     },
     {
