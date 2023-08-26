@@ -14,5 +14,16 @@
     "home": "inicio",
     "blog": "blog",
     "cv": "cv"
+  },
+  "CV": {
+    "description": "¡Hola! Soy Luis, un Desarrollador Frontend construyendo proyectos Web y Móviles en JS/TS. Jr en Swift. Apasionado por el código limpio, me mantengo actualizado con las últimas tendencias y mejores prácticas de la industria para garantizar los más altos estándares de calidad en mi trabajo. Además, poseo una sólida comprensión de los principios de UX, lo que me permite crear experiencias de usuario fluidas que dejan una impresión duradera.",
+    "keybirthday": "fecha de nacimiento",
+    "birthday": "24 de Abril 1993",
+    "keylanguages": "idiomas",
+    "languages": "native in Spanish, mid level in English",
+    "keylocation": "dirección",
+    "location": "Buenos Aires, Argentina",
+    "hobbies": "gimnasio, senderismo, bici, viajes, mascotas",
+    "keyhobbies": "hobbies"
   }
 }
