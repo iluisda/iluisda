@@ -30,7 +30,7 @@ const MainNav = ({ locale }: { locale: string }) => {
         result = "US";
         break;
       default:
-        result = "ES";
+        result = "AR";
         break;
     }
     return result;
@@ -78,7 +78,7 @@ const MainNav = ({ locale }: { locale: string }) => {
                       locale={"es"}
                       className="font-medium w-full"
                     >
-                      {getFlagEmoji("ES")} {t("spanish")}
+                      {getFlagEmoji("AR")} {t("spanish")}
                     </Link>
                   </DropdownMenuItem>
                   <DropdownMenuItem id="br">
