@@ -12,6 +12,7 @@ import { useToast } from "@/components/ui/use-toast";
 import { allCVs } from "contentlayer/generated";
 import Details from "@/components/cv/details";
 import { getFlagEmoji } from "@/lib/utils";
+import { format } from "date-fns";
 
 const cvPage = ({ params }: { params: { locale: string } }) => {
   // eslint-disable-next-line react-hooks/rules-of-hooks
@@ -39,6 +40,30 @@ const cvPage = ({ params }: { params: { locale: string } }) => {
     prose:
       "prose dark:prose-invert prose-a:decoration-gray-500 hover:prose-a:decoration-black dark:hover:prose-a:decoration-white prose-img:rounded-md prose-blockquote:rounded prose-em:text-gray-900 dark:prose-em:text-white prose-em:font-light",
   };
+  const handlePrint = () => {
+    if (typeof window !== "undefined") window?.print();
+  };
+  const handleCopy = () => {
+    let string = "";
+    Object.entries(categorizedCVs)
+      .reverse()
+      .map(([eKey, eValue]) => {
+        string += `# ${eKey}\n`;
+        (eValue as any).map((cv: any) => {
+          string += `Time range: ${format(
+            new Date(cv.from),
+            "MMM yyyy"
+          )}-${format(new Date(cv.to), "MMM yyyy")}\nPosition: ${
+            cv.what
+          }\nCompany: ${cv.where}\n${cv.body.raw}\n${" "}\n`;
+        });
+      });
+    navigator.clipboard.writeText(string);
+    toast({
+      title: "Copied!",
+      description: "CV has been copied to clipboard.",
+    });
+  };
   return (
     <React.Fragment>
       <PageWrapper>
@@ -54,8 +79,10 @@ const cvPage = ({ params }: { params: { locale: string } }) => {
                   className="self-center"
                   size="icon"
                   variant="ghost"
-                  onClick={() => {}}
-                  disabled
+                  onClick={() => {
+                    handlePrint();
+                  }}
+                  // disabled
                 >
                   <Printer className="h-5 w-5" />
                 </Button>
@@ -65,11 +92,9 @@ const cvPage = ({ params }: { params: { locale: string } }) => {
                   size="icon"
                   variant="ghost"
                   onClick={() => {
-                    toast({
-                      description: "Your message has been sent.",
-                    });
+                    handleCopy();
                   }}
-                  disabled
+                  // disabled
                 >
                   <Copy className="h-5 w-5" />
                 </Button>
