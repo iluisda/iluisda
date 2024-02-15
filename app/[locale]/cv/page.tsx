@@ -1,7 +1,7 @@
 "use client";
 import Grid from "@/components/cv/grid";
 import { Button } from "@/components/ui/button";
-import React from "react";
+import React, { useMemo } from "react";
 import { Printer, Copy } from "lucide-react";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
@@ -18,8 +18,23 @@ const cvPage = ({ params }: { params: { locale: string } }) => {
   const t = useTranslations("CV");
   // eslint-disable-next-line react-hooks/rules-of-hooks
   const { toast } = useToast();
-  const cvs = allCVs.filter((cv) => cv.lang == params.locale);
+  // eslint-disable-next-line react-hooks/rules-of-hooks
+  const filteredCVs = useMemo(() => {
+    return allCVs.filter((cv) => cv.lang === params.locale);
+  }, [allCVs, params.locale]);
 
+  // eslint-disable-next-line react-hooks/rules-of-hooks
+  const categorizedCVs = useMemo(() => {
+    return filteredCVs.reduce((acc: any, cv: any) => {
+      const event: any = cv.event;
+      if (!acc[event]) {
+        acc[event] = [];
+      }
+      acc[event].push(cv);
+      return acc;
+    }, {});
+  }, [filteredCVs]);
+  console.log(categorizedCVs);
   const styles = {
     prose:
       "prose dark:prose-invert prose-a:decoration-gray-500 hover:prose-a:decoration-black dark:hover:prose-a:decoration-white prose-img:rounded-md prose-blockquote:rounded prose-em:text-gray-900 dark:prose-em:text-white prose-em:font-light",
@@ -100,37 +115,40 @@ const cvPage = ({ params }: { params: { locale: string } }) => {
                   <strong className="capitalize">
                     {t("keyhobbies")}
                   </strong>: {t("hobbies")} &#127947; &#128692; &#128745;
-                  &#129406; &#128054;
+                  &#129406; &#128054; 🎧
                   <br />
                 </React.Fragment>
               </p>
             </div>
           </Grid.Right>
-          {cvs.map(({ body, _id, event, ...props }, i) => {
-            return (
-              <React.Fragment key={_id}>
-                <Grid.Left />
-                <Grid.Right>
-                  <Heading className="capitalize">
-                    {event.split("/").pop().replace(/-/g, " ")}
-                  </Heading>
-                  <div className="md:-mx-6 h-px bg-gray-300/50 dark:bg-gray-700/50" />
-                </Grid.Right>
-
-                <React.Fragment key={i}>
-                  <Grid.Left>
-                    <Details {...props} />
-                  </Grid.Left>
+          {Object.entries(categorizedCVs)
+            .reverse()
+            .map(([key, value]) => {
+              return (
+                <React.Fragment key={key}>
+                  <Grid.Left />
                   <Grid.Right>
-                    <div
-                      className={styles.prose}
-                      dangerouslySetInnerHTML={{ __html: body.html }}
-                    />
+                    <Heading className="capitalize">
+                      {key.replace(/-/g, " ")}
+                    </Heading>
+                    <div className="md:-mx-6 h-px bg-gray-300/50 dark:bg-gray-700/50" />
                   </Grid.Right>
+                  {(value as any).map(({ body, ...props }: any, i: any) => (
+                    <React.Fragment key={i}>
+                      <Grid.Left>
+                        <Details {...props} />
+                      </Grid.Left>
+                      <Grid.Right>
+                        <div
+                          className={styles.prose}
+                          dangerouslySetInnerHTML={{ __html: body.html }}
+                        />
+                      </Grid.Right>
+                    </React.Fragment>
+                  ))}
                 </React.Fragment>
-              </React.Fragment>
-            );
-          })}
+              );
+            })}
         </Grid>
       </PageWrapper>
     </React.Fragment>

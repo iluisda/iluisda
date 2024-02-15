@@ -27,11 +27,11 @@ export const CvDocument = defineDocumentType(() => ({
       description: "The title",
       required: true,
     },
-    // language: {
-    //   type: "string",
-    //   description: "The language",
-    //   required: true,
-    // },
+    location: {
+      type: "string",
+      description: "The location",
+      required: false,
+    },
     from: {
       type: "date",
       description: "The starting date",
@@ -45,7 +45,7 @@ export const CvDocument = defineDocumentType(() => ({
     where: {
       type: "string",
       description: "The company, school, or institution",
-      required: true,
+      required: false,
     },
     what: {
       type: "string",
@@ -64,7 +64,7 @@ export const CvDocument = defineDocumentType(() => ({
     },
     event: {
       type: "enum",
-      options: ["en", "es", "pt"],
+      options: ["education", "work-experiences", "projects"],
       resolve: (_) => _._raw.sourceFileDir.replace("cv/", "").split("/")[1],
     },
     lang: {

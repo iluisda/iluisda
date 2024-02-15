@@ -13,6 +13,7 @@ const styles = {
 export interface TextProps extends React.HTMLAttributes<HTMLParagraphElement> {
   variant?: keyof typeof styles.variant;
   italic?: boolean;
+  fontSize?: string;
 }
 
 const Text: React.FC<TextProps> = ({
@@ -20,10 +21,12 @@ const Text: React.FC<TextProps> = ({
   variant = "default",
   className,
   italic,
+  fontSize,
   ...props
 }) => {
   return (
     <p
+      style={{ fontSize }}
       className={cn(
         styles.base,
         styles.variant[variant],

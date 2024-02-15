@@ -5,11 +5,12 @@ import Text from "@/components/common/text";
 interface Details {
   from: string;
   to: string;
-  what: string;
-  where: string;
+  what?: string;
+  where?: string;
+  location?: string;
 }
 
-const Details = ({ from, to, what, where }: Details) => {
+const Details = ({ from, to, what, where, location }: Details) => {
   return (
     <>
       <Text variant="light">
@@ -18,9 +19,16 @@ const Details = ({ from, to, what, where }: Details) => {
         }`}
       </Text>
       <Text>{what}</Text>
-      <Text variant="light" italic>
-        {where}
-      </Text>
+      {!!where && (
+        <Text fontSize="16px" italic>
+          {where}
+        </Text>
+      )}
+      {!!location && (
+        <Text fontSize="14px" variant="light">
+          📍 {location}
+        </Text>
+      )}
     </>
   );
 };
