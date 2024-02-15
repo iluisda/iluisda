@@ -7,6 +7,7 @@ import localFont from "next/font/local";
 
 import { notFound } from "next/navigation";
 import { NextIntlClientProvider } from "next-intl";
+import { Toaster } from "@/components/ui/toaster";
 
 // Font files can be colocated inside of `app`
 const sfFont = localFont({
@@ -60,7 +61,7 @@ export default async function RootLayout({
   params: { locale },
 }: {
   children: React.ReactNode;
-  params: any;
+  params: { locale: string };
 }) {
   let messages;
   try {
@@ -80,7 +81,10 @@ export default async function RootLayout({
       >
         <NextIntlClientProvider locale={locale} messages={messages}>
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-            <Layout locale={locale}>{children}</Layout>
+            <Layout locale={locale}>
+              {children}
+              <Toaster />
+            </Layout>
           </ThemeProvider>
         </NextIntlClientProvider>
       </body>

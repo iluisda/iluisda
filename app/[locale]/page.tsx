@@ -1,3 +1,4 @@
+"use client";
 import { PageWrapper } from "@/components/common/page-wrapper";
 import Hero from "@/components/main-home";
 import React from "react";

@@ -19,10 +19,12 @@
     "description": "Hi! I’m Luis, a Frontend Developer working on Web and Mobile projects in JS/TS. Jr in Swift. Passionate about clean code, I stay up-to-date with the latest industry trends and best practices to ensure the highest quality standards in my work. Additionally, I possess a solid understanding of UX principles, enabling me to create seamless user experiences that leave a lasting impression.",
     "keybirthday": "birthday",
     "birthday": "April 24, 1993",
+    "keycitizenship": "citizenship",
+    "citizenship": "Venezuelan",
     "keylanguages": "languages",
     "languages": "native in Spanish, mid level in English and mid level in Portuguese",
     "keylocation": "location",
-    "location": "Buenos Aires, Argentina",
+    "location": "Garopaba, SC - Brazil",
     "hobbies": "gym, hiking, cycling, traveling, dogs lover",
     "keyhobbies": "hobbies"
   }

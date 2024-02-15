@@ -32,7 +32,7 @@ const Footer = () => {
 
         <p className="text-xs text-center ">
           &#127758;
-          <span className="text-xs font-light tracking-wide leading-none">{` Argentina | Brasil, ${new Date().getFullYear()}`}</span>
+          <span className="text-xs font-light tracking-wide leading-none">{` LATAM, ${new Date().getFullYear()}`}</span>
         </p>
       </Container>
     </footer>
