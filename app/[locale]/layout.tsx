@@ -9,6 +9,8 @@ import { notFound } from "next/navigation";
 import { NextIntlClientProvider } from "next-intl";
 import { Toaster } from "@/components/ui/toaster";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { Analytics } from "@vercel/analytics/react";
+
 // Font files can be colocated inside of `app`
 const sfFont = localFont({
   src: [
@@ -82,8 +84,9 @@ export default async function RootLayout({
         <NextIntlClientProvider locale={locale} messages={messages}>
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
             <Layout locale={locale}>
-              <SpeedInsights />
               {children}
+              <SpeedInsights />
+              <Analytics />
               <Toaster />
             </Layout>
           </ThemeProvider>
