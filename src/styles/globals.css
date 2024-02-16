@@ -105,8 +105,10 @@
   }
 }
 .custom-w-rem {
+  min-width: 14rem;
   width: 18rem;
 }
 .custom-h-rem {
   height: 7rem;
+  max-height: 7rem;
 }

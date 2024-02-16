@@ -3,11 +3,11 @@ import Image from "next/image";
 import Link from "next/link";
 const PostArticle = ({ post }: any) => {
   return (
-    <div className=" group cursor-pointer flex items-center justify-start overflow-hidden transition-all hover:scale-105 relative opacity-100 transform perspective-1200">
+    <div className="group cursor-pointer flex items-center justify-start overflow-hidden transition-all hover:scale-105 relative opacity-100 transform perspective-1200 my-10">
       <div className="container mx-auto flex flex-col sm:flex-row items-start">
         <div className="w-full sm:w-auto">
           <Link
-            className="block w-full overflow-hidden "
+            className="block w-full overflow-hidden"
             href={`/${post.lang}/blog/${post.slug}`}
           >
             <div className="p-4">
