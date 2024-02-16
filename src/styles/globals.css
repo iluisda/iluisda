@@ -104,3 +104,9 @@
     @apply bg-background text-foreground;
   }
 }
+.custom-w-rem {
+  width: 18rem;
+}
+.custom-h-rem {
+  height: 7rem;
+}

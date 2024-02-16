@@ -4,15 +4,21 @@ import { defineDocumentType, makeSource } from "contentlayer/source-files";
 
 export const Post = defineDocumentType(() => ({
   name: "Post",
-  filePathPattern: `posts/*.md`,
+  filePathPattern: `posts/**/*.md`,
   fields: {
     title: { type: "string", required: true },
+    image: { type: "string" },
     date: { type: "date", required: true },
+    excerpt: { type: "string", required: true },
   },
   computedFields: {
     slug: {
       type: "string",
       resolve: (_) => _._raw.sourceFileName.replace(/\.[^.$]+$/, ""),
+    },
+    lang: {
+      type: "string",
+      resolve: (doc) => doc._raw.flattenedPath.split("/")[1],
     },
   },
 }));

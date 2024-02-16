@@ -31,3 +31,8 @@ export const getFlagEmoji = (countryCode:any) => {
     .map((char:any) =>  127397 + char.charCodeAt());
   return String.fromCodePoint(...codePoints);
 }
+export const cx = (...classNames: any) => classNames.filter(Boolean).join(" ");
+export const styles = {
+  prose:
+    "prose dark:prose-invert prose-a:decoration-gray-500 hover:prose-a:decoration-black dark:hover:prose-a:decoration-white prose-img:rounded-md prose-blockquote:rounded prose-em:text-gray-900 dark:prose-em:text-white prose-em:font-light",
+};

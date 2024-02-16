@@ -11,7 +11,7 @@ import { PageWrapper } from "@/components/common/page-wrapper";
 import { useToast } from "@/components/ui/use-toast";
 import { allCVs } from "contentlayer/generated";
 import Details from "@/components/cv/details";
-import { getFlagEmoji } from "@/lib/utils";
+import { getFlagEmoji, styles } from "@/lib/utils";
 import { format } from "date-fns";
 
 const cvPage = ({ params }: { params: { locale: string } }) => {
@@ -36,10 +36,6 @@ const cvPage = ({ params }: { params: { locale: string } }) => {
     }, {});
   }, [filteredCVs]);
 
-  const styles = {
-    prose:
-      "prose dark:prose-invert prose-a:decoration-gray-500 hover:prose-a:decoration-black dark:hover:prose-a:decoration-white prose-img:rounded-md prose-blockquote:rounded prose-em:text-gray-900 dark:prose-em:text-white prose-em:font-light",
-  };
   const handlePrint = () => {
     if (typeof window !== "undefined") window?.print();
   };

@@ -27,5 +27,15 @@
     "location": "Garopaba, SC - Brazil",
     "hobbies": "gimnasio, senderismo, bici, viajes, mascotas, musica electronica",
     "keyhobbies": "hobbies"
+  },
+  "Blog": {
+    "title": "Blog de Luis",
+    "subtitle": "Noticias, actualizaciones, algunas publicaciones que me gusta compartir"
+  },
+  "Paths": {
+    "home": "inicio",
+    "blog": "blog",
+    "cv": "cv",
+    "projects": "proyectos"
   }
 }
