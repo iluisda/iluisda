@@ -22,7 +22,7 @@ const cvPage = ({ params }: { params: { locale: string } }) => {
   // eslint-disable-next-line react-hooks/rules-of-hooks
   const filteredCVs = useMemo(() => {
     return allCVs.filter((cv) => cv.lang === params.locale);
-  }, [allCVs, params.locale]);
+  }, [params.locale]);
 
   // eslint-disable-next-line react-hooks/rules-of-hooks
   const categorizedCVs = useMemo(() => {
