@@ -7,7 +7,7 @@ import React from "react";
 const SinglePost = ({ post }: any) => {
   return (
     <React.Fragment>
-      <div className="container mx-auto py-8">
+      <div className="container mx-auto max-w-screen-md py-8 flex justify-center">
         <div className="max-w-2xl mx-auto">
           <h1 className="text-3xl font-bold mb-4">{post.title}</h1>
           <p className="text-gray-600 mb-2">{`${format(
