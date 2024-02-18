@@ -18,8 +18,12 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { useTranslations } from "next-intl";
+import { useRouter } from "next/router";
+import { useParams, usePathname } from "next/navigation";
 
 const MainNav = ({ locale }: { locale: string }) => {
+  const pathname = usePathname();
+  const params = useParams();
   const getFlag = () => {
     let result;
     switch (locale) {
@@ -41,7 +45,7 @@ const MainNav = ({ locale }: { locale: string }) => {
       <div className="fixed w-full backdrop-blur-xl dark:backdrop-blur-md ">
         <Container className="flex items-center justify-between space-x-3 px-0 py-0">
           <Shell className="bg-background/70 flex w-full items-center justify-between px-3 pt-2 backdrop-blur-lg md:px-6 md:pt-2">
-            <Link href="/" className="font-medium">
+            <Link href={`/${locale}`} className="font-medium">
               <span className="text-gray-500 dark:text-gray-400">i</span>
               luisda
             </Link>
@@ -65,7 +69,7 @@ const MainNav = ({ locale }: { locale: string }) => {
                   <DropdownMenuSeparator />
                   <DropdownMenuItem id="us">
                     <Link
-                      href={"/"}
+                      href={`${pathname.replace(`/${params.locale}`, "")}`}
                       locale={"en"}
                       className="font-medium w-full "
                     >
@@ -74,7 +78,7 @@ const MainNav = ({ locale }: { locale: string }) => {
                   </DropdownMenuItem>
                   <DropdownMenuItem id="es">
                     <Link
-                      href={"/"}
+                      href={`${pathname.replace(`/${params.locale}`, "")}`}
                       locale={"es"}
                       className="font-medium w-full"
                     >
@@ -83,7 +87,7 @@ const MainNav = ({ locale }: { locale: string }) => {
                   </DropdownMenuItem>
                   <DropdownMenuItem id="br">
                     <Link
-                      href={"/"}
+                      href={`${pathname.replace(`/${params.locale}`, "")}`}
                       locale={"pt"}
                       className="font-medium w-full"
                     >
