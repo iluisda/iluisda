@@ -4,6 +4,17 @@ import { compareDesc, format, parseISO } from "date-fns";
 import { allPosts } from "contentlayer/generated";
 import PostList from "@/components/blog/PostList";
 import EmptyAnimation from "@/components/common/empty";
+export async function generateMetadata() {
+  return {
+    title: "iluisda - Blog",
+    description: "Lifestyle, maybe work and some posts that i like to share",
+    openGraph: {
+      title: "iluisda - Blog",
+      description: "Lifestyle, maybe work and some posts that i like to share",
+      images: ["/image/default.png"],
+    },
+  };
+}
 const blog = async ({ params }: { params: { locale: string } }) => {
   const posts = allPosts
     .filter((post) => post.lang === params.locale)
