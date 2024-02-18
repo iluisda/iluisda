@@ -12,12 +12,20 @@ const SinglePost = ({ post }: any) => {
   return (
     <>
       <NextSeo
-        title={post.title}
+        title={`${post.title} | Blog`}
         description={post.excerpt}
         openGraph={{
-          title: `${post.title} `,
+          title: `${post.title} | Blog`,
           description: `${post.excerpt}`,
-          images: [post?.image],
+          images: [
+            {
+              url: `https://www.iluisda.dev${post?.image}`,
+              width: 800,
+              height: 600,
+              alt: post.title,
+              type: "image/jpeg",
+            },
+          ],
         }}
       />
       <div className="container mx-auto max-w-screen-md py-8 flex justify-center">
