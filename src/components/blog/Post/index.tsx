@@ -28,18 +28,23 @@ const PostArticle = ({ post }: any) => {
           </Link>
         </div>
         <div className="custom-w-rem custom-h-rem ml-4 hidden sm:block">
-          <Image
-            width={175}
-            height={100}
-            src={post.image || "/images/default_cover.jpg"}
-            {...(post.image && {
-              placeholder: "blur",
-              blurDataURL: post.image,
-            })}
-            alt={post.image || "Thumbnail"}
-            priority={true}
-            className="w-full h-full object-cover rounded-lg shadow-md"
-          />
+          <Link
+            className=" overflow-hidden"
+            href={`/${post.lang}/blog/${post.slug}`}
+          >
+            <Image
+              width={175}
+              height={100}
+              src={post.image || "/images/default_cover.jpg"}
+              {...(post.image && {
+                placeholder: "blur",
+                blurDataURL: post.image,
+              })}
+              alt={post.image || "Thumbnail"}
+              priority={true}
+              className="w-full h-full object-cover rounded-lg shadow-md"
+            />
+          </Link>
         </div>
       </div>
     </div>
