@@ -18,12 +18,8 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { useTranslations } from "next-intl";
-import { useRouter } from "next/router";
-import { useParams, usePathname } from "next/navigation";
 
 const MainNav = ({ locale }: { locale: string }) => {
-  const pathname = usePathname();
-  const params = useParams();
   const getFlag = () => {
     let result;
     switch (locale) {
@@ -69,7 +65,7 @@ const MainNav = ({ locale }: { locale: string }) => {
                   <DropdownMenuSeparator />
                   <DropdownMenuItem id="us">
                     <Link
-                      href={`${pathname.replace(`/${params.locale}`, "")}`}
+                      href={"/"}
                       locale={"en"}
                       className="font-medium w-full "
                     >
@@ -78,7 +74,7 @@ const MainNav = ({ locale }: { locale: string }) => {
                   </DropdownMenuItem>
                   <DropdownMenuItem id="es">
                     <Link
-                      href={`${pathname.replace(`/${params.locale}`, "")}`}
+                      href={"/"}
                       locale={"es"}
                       className="font-medium w-full"
                     >
@@ -87,7 +83,7 @@ const MainNav = ({ locale }: { locale: string }) => {
                   </DropdownMenuItem>
                   <DropdownMenuItem id="br">
                     <Link
-                      href={`${pathname.replace(`/${params.locale}`, "")}`}
+                      href={"/"}
                       locale={"pt"}
                       className="font-medium w-full"
                     >

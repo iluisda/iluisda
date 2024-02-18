@@ -10,9 +10,6 @@ export async function generateMetadata({ params }: any) {
     openGraph: {
       title: post.title,
       description: post.excerpt,
-      images: [`${post.image}`],
-      url: `www.iluisda.dev/${post.image}`,
-      siteName: `www.iluisda.dev/${post.lang}/${post.slug}`,
     },
   };
 }
