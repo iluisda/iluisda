@@ -5,12 +5,12 @@ import { notFound } from "next/navigation";
 export async function generateMetadata({ params }: any) {
   const post = allPosts.filter((post) => post.slug === params.slug)[0];
   return {
-    title: post.title,
+    title: `${post.title} | Blog`,
     description: post.excerpt,
     openGraph: {
       title: post.title,
       description: post.excerpt,
-      images: [post.image],
+      images: [`www.iluisda.dev/${post.image}`],
       url: `www.iluisda.dev/${post.image}`,
       siteName: `www.iluisda.dev/${post.lang}/${post.slug}`,
     },

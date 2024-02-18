@@ -11,7 +11,7 @@ export async function generateMetadata() {
     openGraph: {
       title: "iluisda - Blog",
       description: "Lifestyle, maybe work and some posts that i like to share",
-      images: ["/image/default.png"],
+      images: ["/images/default.png"],
     },
   };
 }
