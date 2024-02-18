@@ -20,8 +20,17 @@ Con cada transición suave y cada cambio de ritmo, sentí cómo la música cobra
 Si quieres dar un paseo por mi perfil de SoundCloud, aquí tienes el enlace a la mezcla que hice. ¡No dudes en escucharla! :) *[Sexta-feira 14hs 🎶🎧](https://soundcloud.com/iluisdamusic/sexta-feira-14hs?si=37fd9f20da9b43e08bb34c8c69925349&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing)*.
 
 ### Algunas Canciones Usadas en la Mezcla:
-- [Sativa Jazz - Detlef Remix - Radio Edit - Abana](spotify:track:3xGNfk69tK8I9B6a8sMvS5)
-- [La Milu - Radio Mix - Miguelle & Tons](spotify:track:1NqWpK1lDyvOXjCqFEvHYa)
-- [Se Você Quiser - KVSH](spotify:track:5oXKJ91ULahjGcSw9AH2sC)
-- [No Rio - ENNE (BR)](spotify:track:1cWcWTUjU6MgvhZuQexbck)
-- [Do Jazz ao Samba - Gabss](spotify:track:3V0cS6nTNBN97pxyeWSjtt)
+
+## Spotify 🎵🟢
+- [Sativa Jazz - Detlef Remix - Radio Edit - Abana](spotify:track:4HQEGfj5oZDXBiavAud95w)
+- [La Milu - Radio Mix - Miguelle & Tons](spotify:track:27f3SLjNf8Uqb7bwMcX8hX)
+- [Se Você Quiser - KVSH](spotify:track:0Zk7UObYCZLCLd1pqN3Gjb)
+- [No Rio - ENNE (BR)](spotify:track:3eNozsS0cFES0BSgSQDiY0)
+- [Do Jazz ao Samba - Gabss](spotify:track:4KaPv4uxrnIhLTQXPCxWjV)
+
+## Apple music 
+- [Sativa Jazz - Detlef Remix - Radio Edit - Abana](https://music.apple.com/ar/album/sativa-jazz-detlef-remix-single/1634855873?l=en-GB)
+- [La Milu - Radio Mix - Miguelle & Tons](https://music.apple.com/ar/album/la-milu-radio-mix/1702740582?i=1702740584&l=en-GB)
+- [Se Você Quiser - KVSH](https://music.apple.com/ar/album/se-voc%C3%AA-quiser/1669801652?i=1669801654&l=en-GB)
+- [No Rio - ENNE (BR)](https://music.apple.com/ar/album/no-rio/1663116703?i=1663116704&l=en-GB)
+- [Do Jazz ao Samba - Gabss](https://music.apple.com/ar/album/do-jazz-ao-samba/1707163994?i=1707164058&l=en-GB)

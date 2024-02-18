@@ -1,5 +1,7 @@
 // contentlayer.config.ts
 import { defineDocumentType, makeSource } from "contentlayer/source-files";
+import readingTime from "reading-time";
+
 // Define a function to dynamically determine the document type
 
 export const Post = defineDocumentType(() => ({
@@ -19,6 +21,10 @@ export const Post = defineDocumentType(() => ({
     lang: {
       type: "string",
       resolve: (doc) => doc._raw.flattenedPath.split("/")[1],
+    },
+    readingTime: {
+      type: "string",
+      resolve: (_) => readingTime(_.body.raw),
     },
   },
 }));

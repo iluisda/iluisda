@@ -29,8 +29,9 @@
     "keyhobbies": "hobbies"
   },
   "Blog": {
-    "title": "Blog de Luis",
-    "subtitle": "Noticias, actualizaciones, algunas publicaciones que me gusta compartir"
+    "title": "Los cuentos de Luis",
+    "subtitle": "Estilo de vida, tal vez trabajo y algunos posts que me gusta compartir.",
+    "reads": "min de lectura"
   },
   "Paths": {
     "home": "inicio",

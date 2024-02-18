@@ -1,6 +1,5 @@
 "use client";
 import Heading from "@/components/common/heading";
-import { PageWrapper } from "@/components/common/page-wrapper";
 import { Post } from "contentlayer/generated";
 import { useTranslations } from "next-intl";
 import React from "react";

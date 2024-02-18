@@ -15,14 +15,9 @@ import {
 const Home = () => {
   const t = useTranslations("Index");
   return (
-    <React.Fragment>
-      <PageWrapper>
-        <Hero
-          welcome={t("welcome")}
-          sign={t("sign")}
-          sentence={t("sentence")}
-        />
-        {/* <div className="grid gap-4 grid-cols-2 mt-10">
+    <PageWrapper>
+      <Hero welcome={t("welcome")} sign={t("sign")} sentence={t("sentence")} />
+      {/* <div className="grid gap-4 grid-cols-2 mt-10">
           <div className="blur-none">
             <Card className="backdrop-blur-xl bg-white/30 ">
               <CardHeader>
@@ -80,8 +75,7 @@ const Home = () => {
             </Card>
           </div>
         </div> */}
-      </PageWrapper>
-    </React.Fragment>
+    </PageWrapper>
   );
 };
 export default Home;
