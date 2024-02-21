@@ -28,7 +28,31 @@ export const Post = defineDocumentType(() => ({
     },
   },
 }));
-
+export const Projects = defineDocumentType(() => ({
+  name: "Projects",
+  filePathPattern: `projects/**/*.md`,
+  fields: {
+    title: { type: "string", required: true },
+    category: { type: "string", required: false },
+    image: { type: "string" },
+    date: { type: "date", required: true },
+    excerpt: { type: "string", required: true },
+  },
+  computedFields: {
+    slug: {
+      type: "string",
+      resolve: (_) => _._raw.sourceFileName.replace(/\.[^.$]+$/, ""),
+    },
+    lang: {
+      type: "string",
+      resolve: (doc) => doc._raw.flattenedPath.split("/")[1],
+    },
+    readingTime: {
+      type: "string",
+      resolve: (_) => readingTime(_.body.raw),
+    },
+  },
+}));
 export const CvDocument = defineDocumentType(() => ({
   name: "CV",
   filePathPattern: `cv/**/*.md`, // Include locale folder in filePathPattern
@@ -87,5 +111,5 @@ export const CvDocument = defineDocumentType(() => ({
 }));
 export default makeSource({
   contentDirPath: "content",
-  documentTypes: [Post, CvDocument],
+  documentTypes: [Post, CvDocument, Projects],
 });

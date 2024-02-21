@@ -37,6 +37,11 @@
     "subtitle": "Lifestyle, maybe work and some posts that i like to share",
     "reads": "min reads"
   },
+  "Projects": {
+    "title": "Projects",
+    "subtitle": "Discover My Creations: Projects That Reflect My Passion and Expertise",
+    "reads": "min reads"
+  },
   "Paths": {
     "home": "home",
     "blog": "blog",
