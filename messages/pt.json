@@ -27,7 +27,9 @@
     "keylocation": "endereço",
     "location": "Buenos Aires, Argentina & Garopaba, SC - Brazil",
     "hobbies": "academia, caminhada, bicicleta, viagens, pets lover, música eletrônica",
-    "keyhobbies": "hobbies"
+    "keyhobbies": "hobbies",
+    "copy": "Copiado!",
+    "successcopy": "CV foi copiado para a área de transferência."
   },
   "Blog": {
     "title": "Os contos de Luis",

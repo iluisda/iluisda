@@ -28,7 +28,9 @@
     "keylocation": "location",
     "location": "Buenos Aires, Argentina & Garopaba, SC - Brazil",
     "hobbies": "gym, hiking, cycling, traveling, dogs lover, electronic music",
-    "keyhobbies": "hobbies"
+    "keyhobbies": "hobbies",
+    "copy": "Copied!",
+    "successcopy": "CV has been copied to clipboard."
   },
   "Blog": {
     "title": "The tales of Luis",

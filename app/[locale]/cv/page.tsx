@@ -110,8 +110,8 @@ const cvPage = ({ params }: { params: { locale: string } }) => {
       });
     navigator.clipboard.writeText(string);
     toast({
-      title: "Copied!",
-      description: "CV has been copied to clipboard.",
+      title: t("copy"),
+      description: t("successcopy"),
     });
   };
   return (
@@ -163,11 +163,11 @@ const cvPage = ({ params }: { params: { locale: string } }) => {
           </Text>
           <div className="md:-mx-6 my-5 h-px bg-gray-300/50 dark:bg-gray-700/50" />
           <Text>{`Skills`}</Text>
-          <div className="flex flex-wrap items-center justify-end mt-5">
+          <div className="flex flex-wrap items-center md:justify-end mt-5">
             {skills.map(({ technology, icon }) => (
               <div key={technology} className="flex items-center mb-4">
-                <span className="ml-4">{renderIcon(icon)}</span>
-                <p className="ml-2">{technology}</p>
+                <span className="md:ml-4 sm:ml-1">{renderIcon(icon)}</span>
+                <p className="mx-2">{technology}</p>
               </div>
             ))}
           </div>

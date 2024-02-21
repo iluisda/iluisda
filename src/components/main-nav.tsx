@@ -41,7 +41,7 @@ const MainNav = ({ locale }: { locale: string }) => {
       <div className="fixed w-full backdrop-blur-xl dark:backdrop-blur-md ">
         <Container className="flex items-center justify-between space-x-3 px-0 py-0">
           <Shell className="bg-background/70 flex w-full items-center justify-between px-3 pt-2 backdrop-blur-lg md:px-6 md:pt-2">
-            <Link href={`/${locale}`} className="font-medium">
+            <Link href={`/`} className="font-medium">
               <span className="text-gray-500 dark:text-gray-400">i</span>
               luisda
             </Link>
