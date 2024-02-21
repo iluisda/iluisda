@@ -4,7 +4,7 @@ import Hero from "@/components/main-home";
 import React from "react";
 import { useTranslations } from "next-intl";
 import { Card, CardContent } from "@/components/ui/card";
-import { ScrollText, GalleryVerticalEnd, Rss } from "lucide-react";
+import { ScrollText, GalleryVerticalEnd, Rss, Wrench } from "lucide-react";
 import Text from "@/components/common/text";
 import Link from "next-intl/link";
 
@@ -16,7 +16,7 @@ const Home = () => {
       <Hero welcome={t("welcome")} sign={t("sign")} sentence={t("sentence")} />
       <div className="grid gap-4 grid-cols-4 mt-10">
         <Link href={`/cv`}>
-          <Card className="backdrop-blur-xl bg-white/30 shadow">
+          <Card className="backdrop-blur-xl bg-white/30 ">
             <CardContent className="py-3">
               <Text className="flex justify-normal">
                 <ScrollText />
@@ -26,7 +26,7 @@ const Home = () => {
           </Card>
         </Link>
         <Link href={`/projects`}>
-          <Card className="backdrop-blur-xl bg-white/30 shadow">
+          <Card className="backdrop-blur-xl bg-white/30">
             <CardContent className="py-3">
               <Text className="flex justify-normal">
                 <GalleryVerticalEnd />
@@ -36,7 +36,7 @@ const Home = () => {
           </Card>
         </Link>
         <Link href={`/blog`}>
-          <Card className="backdrop-blur-xl bg-white/30 shadow">
+          <Card className="backdrop-blur-xl bg-white/30">
             <CardContent className="py-3">
               <Text className="flex justify-normal">
                 <Rss />
@@ -45,6 +45,16 @@ const Home = () => {
             </CardContent>
           </Card>
         </Link>
+        {/* <Link href={`/blog`} className="disabled"> */}
+        <Card className="backdrop-blur-xl bg-white/30 opacity-25 cursor-not-allowed">
+          <CardContent className="py-3">
+            <Text className="flex justify-normal ">
+              <Wrench />
+              <span className="ml-3 capitalize ">{p("tools")}</span>
+            </Text>
+          </CardContent>
+        </Card>
+        {/* </Link> */}
       </div>
     </PageWrapper>
   );
