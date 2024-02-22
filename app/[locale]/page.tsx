@@ -14,7 +14,7 @@ const Home = () => {
   return (
     <PageWrapper>
       <Hero welcome={t("welcome")} sign={t("sign")} sentence={t("sentence")} />
-      <div className="grid gap-4 grid-cols-4 mt-10">
+      <div className="grid gap-4 md:grid-cols-4 sm:grid-cols-2 mt-10">
         <Link href={`/cv`}>
           <Card className="backdrop-blur-xl bg-white/30 ">
             <CardContent className="py-3">
