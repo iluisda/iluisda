@@ -166,8 +166,10 @@ const cvPage = ({ params }: { params: { locale: string } }) => {
           <div className="flex flex-wrap items-center md:justify-end mt-5">
             {skills.map(({ technology, icon }) => (
               <div key={technology} className="flex items-center mb-4">
-                <span className="md:ml-4 sm:ml-1">{renderIcon(icon)}</span>
-                <p className="mx-2">{technology}</p>
+                <span className="md:ml-4 sm:ml-1 md:ml-2">
+                  {renderIcon(icon)}
+                </span>
+                <p className="lg:ml-2 lg:mx-0 mx-2">{technology}</p>
               </div>
             ))}
           </div>
