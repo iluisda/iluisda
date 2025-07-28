@@ -23,6 +23,7 @@ import {
   SiNextdotjs,
   SiReact,
   SiIonic,
+  SiPython,
 } from "react-icons/si";
 import Link from "@/components/ui/link";
 const skills = [
@@ -65,6 +66,10 @@ const skills = [
   {
     technology: "Ionic Framework",
     icon: "SiIonic",
+  },
+  {
+    technology: "Python",
+    icon: "SiPython",
   },
 ];
 
@@ -204,7 +209,7 @@ const cvPage = ({ params }: { params: { locale: string } }) => {
               {t("languages")}
               <br />
               <strong className="capitalize">{t("keylocation")}</strong>:{" "}
-              {t("location")} {getFlagEmoji("AR")} {getFlagEmoji("BR")}
+              {t("location")} 📍 {getFlagEmoji("BR")}
               <br />
               <strong className="capitalize">{t("keyhobbies")}</strong>:{" "}
               {t("hobbies")} &#127947; &#128692; &#128745; &#129406; &#128054;
@@ -266,6 +271,8 @@ const renderIcon = (icon: any) => {
       return <SiReact />;
     case "SiIonic":
       return <SiIonic />;
+    case "SiPython":
+      return <SiPython />;
     default:
       return null;
   }

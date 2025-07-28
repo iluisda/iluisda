@@ -1,7 +1,9 @@
 ---
 title: "Mechanized AI"
 from: "2023-01"
-to: "2024"
+to: "2025"
+current: true
+label_current: "Actualidad"
 location: "Argentina & USA | Remote"
 what: "Líder tecnico y Desarrollador"
 where: "Mechanized AI"

@@ -76,7 +76,13 @@ export const CvDocument = defineDocumentType(() => ({
     to: {
       type: "date",
       description: "The ending date",
-      required: true,
+      required: false,
+    },
+    current: { type: "boolean", required: false },
+    label_current: {
+      type: "string",
+      description: "The label for current position",
+      required: false,
     },
     where: {
       type: "string",
