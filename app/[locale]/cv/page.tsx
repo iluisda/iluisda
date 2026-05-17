@@ -9,22 +9,25 @@ import Text from "@/components/common/text";
 import Heading from "@/components/common/heading";
 import { PageWrapper } from "@/components/common/page-wrapper";
 import { useToast } from "@/components/ui/use-toast";
-import { allCVs } from "contentlayer/generated";
+import { allCvs } from "content-collections";
 import Details from "@/components/cv/details";
 import { getFlagEmoji, styles } from "@/lib/utils";
 import { format } from "date-fns";
 import {
   SiHtml5,
-  SiCss3,
+  SiCss,
   SiJavascript,
   SiSwift,
+  SiKotlin,
   SiWordpress,
   SiAngular,
   SiNextdotjs,
   SiReact,
   SiIonic,
   SiPython,
+  SiGooglecloud,
 } from "react-icons/si";
+import { FaAws } from "react-icons/fa";
 import Link from "@/components/ui/link";
 const skills = [
   {
@@ -42,6 +45,10 @@ const skills = [
   {
     technology: "Swift",
     icon: "SiSwift",
+  },
+  {
+    technology: "Kotlin",
+    icon: "SiKotlin",
   },
   {
     technology: "Wordpress",
@@ -71,19 +78,24 @@ const skills = [
     technology: "Python",
     icon: "SiPython",
   },
+  {
+    technology: "AWS",
+    icon: "FaAws",
+  },
+  {
+    technology: "GCP",
+    icon: "SiGooglecloud",
+  },
 ];
 
-const cvPage = ({ params }: { params: { locale: string } }) => {
-  // eslint-disable-next-line react-hooks/rules-of-hooks
+const CvPage = ({ params }: any) => {
+  const { locale } = React.use(params) as any;
   const t = useTranslations("CV");
-  // eslint-disable-next-line react-hooks/rules-of-hooks
   const { toast } = useToast();
-  // eslint-disable-next-line react-hooks/rules-of-hooks
   const filteredCVs = useMemo(() => {
-    return allCVs.filter((cv) => cv.lang === params.locale);
-  }, [params.locale]);
+    return allCvs.filter((cv) => cv.lang === locale);
+  }, [locale]);
 
-  // eslint-disable-next-line react-hooks/rules-of-hooks
   const categorizedCVs = useMemo(() => {
     return filteredCVs.reduce((acc: any, cv: any) => {
       const event: any = cv.event;
@@ -91,6 +103,7 @@ const cvPage = ({ params }: { params: { locale: string } }) => {
         acc[event] = [];
       }
       acc[event].push(cv);
+      acc[event].sort((a: any, b: any) => new Date(b.from).getTime() - new Date(a.from).getTime());
       return acc;
     }, {});
   }, [filteredCVs]);
@@ -250,17 +263,19 @@ const cvPage = ({ params }: { params: { locale: string } }) => {
     </PageWrapper>
   );
 };
-export default cvPage;
+export default CvPage;
 const renderIcon = (icon: any) => {
   switch (icon) {
     case "SiHtml5":
       return <SiHtml5 />;
     case "SiCss3":
-      return <SiCss3 />;
+      return <SiCss />;
     case "SiJavascript":
       return <SiJavascript />;
     case "SiSwift":
       return <SiSwift />;
+    case "SiKotlin":
+      return <SiKotlin />;
     case "SiWordpress":
       return <SiWordpress />;
     case "SiAngular":
@@ -273,6 +288,10 @@ const renderIcon = (icon: any) => {
       return <SiIonic />;
     case "SiPython":
       return <SiPython />;
+    case "FaAws":
+      return <FaAws />;
+    case "SiGooglecloud":
+      return <SiGooglecloud />;
     default:
       return null;
   }

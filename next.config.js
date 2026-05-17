@@ -1,9 +1,9 @@
-const { withContentlayer } = require('next-contentlayer')
-/** @type {import('next').NextConfig} */
-const withNextIntl = require('next-intl/plugin')(
-    // This is the default (also the `src` folder is supported out of the box)
-    './i18n.ts'
-);
-const nextConfig = { reactStrictMode: true, swcMinify: true }
+const { withContentCollections } = require("@content-collections/next");
+const createNextIntlPlugin = require("next-intl/plugin");
 
-module.exports = withNextIntl(withContentlayer(nextConfig)) 
+const withNextIntl = createNextIntlPlugin("./i18n.ts");
+
+/** @type {import('next').NextConfig} */
+const nextConfig = { reactStrictMode: true };
+
+module.exports = withNextIntl(withContentCollections(nextConfig));

@@ -1,25 +1,23 @@
 import { PageWrapper } from "@/components/common/page-wrapper";
 import SingleProject from "@/components/projects/SingleProject";
-import { allProjects } from "contentlayer/generated";
+import { allProjects } from "content-collections";
 import { notFound } from "next/navigation";
 export async function generateMetadata({ params }: any) {
-  const project = allProjects.filter(
-    (project) => project.slug === params.slug
-  )[0];
+  const { slug, locale } = await params;
+  const project = allProjects.find(
+    (project) => project.slug === slug && project.lang === locale
+  );
   return {
-    title: `${project.title} | Blog`,
-    description: project.excerpt,
-    openGraph: {
-      title: project.title,
-      description: project.excerpt,
-    },
+    title: project ? `${project.title} | Projects` : "Project",
+    description: project?.excerpt ?? "",
   };
 }
 
 const Post = async ({ params }: any) => {
-  const project = allProjects.filter(
-    (project) => project.slug === params.slug
-  )[0];
+  const { slug, locale } = await params;
+  const project = allProjects.find(
+    (project) => project.slug === slug && project.lang === locale
+  );
   return (
     <PageWrapper>
       {project ? <SingleProject project={project} /> : notFound()}

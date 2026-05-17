@@ -1,6 +1,6 @@
 import React from "react";
 
-import Link from "next-intl/link";
+import { Link } from "@/navigation";
 
 import Container from "./common/container";
 import { useTranslations } from "next-intl";

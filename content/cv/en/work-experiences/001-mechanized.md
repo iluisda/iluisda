@@ -1,9 +1,7 @@
 ---
 title: "Mechanized AI"
 from: "2023-01"
-to: "2025"
-current: true
-label_current: "Present"
+to: "2025-12"
 location: "Argentina & USA | Remote"
 what: "Technical Leader & Developer"
 where: "Mechanized AI"

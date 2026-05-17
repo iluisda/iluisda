@@ -1,7 +1,7 @@
 import React from "react";
 import { PageWrapper } from "@/components/common/page-wrapper";
 import { compareDesc, format, parseISO } from "date-fns";
-import { allPosts } from "contentlayer/generated";
+import { allPosts } from "content-collections";
 import PostList from "@/components/blog/PostList";
 import EmptyAnimation from "@/components/common/empty";
 export async function generateMetadata() {
@@ -15,9 +15,10 @@ export async function generateMetadata() {
     },
   };
 }
-const blog = async ({ params }: { params: { locale: string } }) => {
+const blog = async ({ params }: { params: Promise<{ locale: string }> }) => {
+  const { locale } = await params;
   const posts = allPosts
-    .filter((post) => post.lang === params.locale)
+    .filter((post) => post.lang === locale)
     .sort((a, b) => compareDesc(new Date(a.date), new Date(b.date)));
   return (
     <React.Fragment>
