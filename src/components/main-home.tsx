@@ -23,9 +23,9 @@ const Hero = ({
       <h1 className="scroll-m-20 text-4xl font-extrabold tracking-normal lg:text-5xl ">
         {welcome}
       </h1>
-      <h4 className="scroll-m-20 text-xl font-light tracking-tight border-b mb-2 text-muted-foreground">
+      <h2 className="scroll-m-20 text-xl font-light tracking-tight border-b mb-2 text-muted-foreground">
         {sign}
-      </h4>
+      </h2>
       <motion.div
         style={{ overflow: "hidden", display: "flex" }}
         variants={container}

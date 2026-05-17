@@ -4,17 +4,30 @@ import { compareDesc, format, parseISO } from "date-fns";
 import { allPosts } from "content-collections";
 import PostList from "@/components/blog/PostList";
 import EmptyAnimation from "@/components/common/empty";
-export async function generateMetadata() {
+import { getAlternates } from "@/lib/seo";
+
+export async function generateMetadata({ params }: any) {
+  const { locale } = await params;
   return {
-    title: "iluisda - Blog",
-    description: "Lifestyle, maybe work and some posts that i like to share",
+    title: "Blog",
+    description:
+      "Thoughts on frontend development, iOS, React, and the tech that makes the web better. Tips, tutorials, and personal insights from a senior developer.",
+    alternates: getAlternates("/blog", locale),
     openGraph: {
-      title: "iluisda - Blog",
-      description: "Lifestyle, maybe work and some posts that i like to share",
-      images: ["/images/default.png"],
+      title: "Blog | Luis Alvarez",
+      description:
+        "Thoughts on frontend development, iOS, React, and the tech that makes the web better. Tips, tutorials, and personal insights from a senior developer.",
+      images: ["/assets/iluisda.jpeg"],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: "Blog | Luis Alvarez",
+      description:
+        "Thoughts on frontend development, iOS, React, and the tech that makes the web better.",
     },
   };
 }
+
 const blog = async ({ params }: { params: Promise<{ locale: string }> }) => {
   const { locale } = await params;
   const posts = allPosts
