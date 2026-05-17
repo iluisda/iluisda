@@ -8,9 +8,9 @@ const PostList = ({ posts }: any) => {
   const t = useTranslations("Blog");
   return (
     <React.Fragment>
-      <Heading className="capitalize flex justify-center scroll-m-20 text-3xl font-extrabold tracking-normal lg:text-4xl">
+      <h1 className="capitalize flex justify-center scroll-m-20 text-3xl font-extrabold tracking-normal lg:text-4xl">
         {t("title")}
-      </Heading>
+      </h1>
       <Heading as="h4" className="flex justify-center text-center">
         {t("subtitle")}
       </Heading>

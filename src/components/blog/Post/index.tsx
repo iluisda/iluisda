@@ -46,7 +46,7 @@ const PostArticle = ({ post }: any) => {
                     placeholder: "blur",
                     blurDataURL: post.image,
                   })}
-                  alt={post.image || "Thumbnail"}
+                  alt={post.image ? post.title : post.title}
                   priority={true}
                   className="w-full h-full object-cover rounded-lg"
                 />

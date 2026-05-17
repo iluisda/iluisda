@@ -46,7 +46,7 @@ const ProjectArticle = ({ project }: any) => {
                     placeholder: "blur",
                     blurDataURL: project.image,
                   })}
-                  alt={project.image || "Thumbnail"}
+                  alt={project.image ? project.title : project.title}
                   priority={true}
                   className="w-full h-full object-cover rounded-lg"
                 />
