@@ -1,6 +1,6 @@
 import SinglePost from "@/components/blog/SinglePost";
 import { PageWrapper } from "@/components/common/page-wrapper";
-import { allPosts } from "contentlayer/generated";
+import { allPosts } from "content-collections";
 import { notFound } from "next/navigation";
 export async function generateMetadata({ params }: any) {
   const post = allPosts.filter((post) => post.slug === params.slug)[0];

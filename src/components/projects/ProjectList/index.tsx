@@ -1,6 +1,5 @@
 "use client";
 import Heading from "@/components/common/heading";
-import { Post } from "contentlayer/generated";
 import { useTranslations } from "next-intl";
 import React from "react";
 import ProjectArticle from "../Project";
@@ -16,10 +15,10 @@ const ProjectList = ({ projects }: any) => {
         {t("subtitle")}
       </Heading>
       <div className="mt-20">
-        {projects.map((project: Post) => {
+        {projects.map((project: any) => {
           return (
             <ProjectArticle
-              key={project._id}
+              key={project._meta.path}
               project={project}
             ></ProjectArticle>
           );

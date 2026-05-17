@@ -9,7 +9,7 @@ export const motion_animations = {
       opacity: 1,
       x: 0,
       transition: {
-        type: "spring",
+        type: "spring" as const,
         damping: 12,
         stiffness: 100,
       },
@@ -18,12 +18,12 @@ export const motion_animations = {
       opacity: 0,
       x: 20,
       transition: {
-        type: "spring",
+        type: "spring" as const,
         damping: 12,
         stiffness: 100,
       },
   },
-};
+} as const;
 export const getFlagEmoji = (countryCode:any) => {
   const codePoints = countryCode
     .toUpperCase()

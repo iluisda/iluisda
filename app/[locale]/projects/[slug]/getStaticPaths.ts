@@ -1,4 +1,4 @@
-import { allProjects } from "contentlayer/generated";
+import { allProjects } from "content-collections";
 
 export async function getStaticPaths() {
   return {

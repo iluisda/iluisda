@@ -6,7 +6,7 @@ import { useTranslations } from "next-intl";
 import { Card, CardContent } from "@/components/ui/card";
 import { ScrollText, GalleryVerticalEnd, Rss, Wrench } from "lucide-react";
 import Text from "@/components/common/text";
-import Link from "next-intl/link";
+import { Link } from "@/navigation";
 
 const Home = () => {
   const t = useTranslations("Index");

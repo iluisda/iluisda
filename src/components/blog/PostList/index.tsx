@@ -1,6 +1,5 @@
 "use client";
 import Heading from "@/components/common/heading";
-import { Post } from "contentlayer/generated";
 import { useTranslations } from "next-intl";
 import React from "react";
 import PostArticle from "../Post";
@@ -16,8 +15,8 @@ const PostList = ({ posts }: any) => {
         {t("subtitle")}
       </Heading>
       <div className="mt-20">
-        {posts.map((post: Post) => {
-          return <PostArticle key={post._id} post={post}></PostArticle>;
+        {posts.map((post: any) => {
+          return <PostArticle key={post._meta.path} post={post}></PostArticle>;
         })}
       </div>
     </React.Fragment>

@@ -7,7 +7,7 @@ import Container from "@/components/common/container";
 import { Button } from "@/components/ui/button";
 import { socialsConfig } from "@/config/socials";
 import { Icons } from "@/components/icons";
-import Link from "next-intl/link";
+import { Link, usePathname } from "@/navigation";
 import { getFlagEmoji } from "@/lib/utils";
 import {
   DropdownMenu,
@@ -20,6 +20,7 @@ import {
 import { useTranslations } from "next-intl";
 
 const MainNav = ({ locale }: { locale: string }) => {
+  const pathname = usePathname();
   const getFlag = () => {
     let result;
     switch (locale) {
@@ -65,7 +66,7 @@ const MainNav = ({ locale }: { locale: string }) => {
                   <DropdownMenuSeparator />
                   <DropdownMenuItem id="us">
                     <Link
-                      href={"/"}
+                      href={pathname}
                       locale={"en"}
                       className="font-medium w-full "
                     >
@@ -74,7 +75,7 @@ const MainNav = ({ locale }: { locale: string }) => {
                   </DropdownMenuItem>
                   <DropdownMenuItem id="es">
                     <Link
-                      href={"/"}
+                      href={pathname}
                       locale={"es"}
                       className="font-medium w-full"
                     >
@@ -83,7 +84,7 @@ const MainNav = ({ locale }: { locale: string }) => {
                   </DropdownMenuItem>
                   <DropdownMenuItem id="br">
                     <Link
-                      href={"/"}
+                      href={pathname}
                       locale={"pt"}
                       className="font-medium w-full"
                     >
