@@ -85,6 +85,9 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     images: ["/assets/iluisda.jpeg"],
   },
+  verification: {
+    google: "Gmmk5FkdYFD4nQ3lAXiymWGu_oLVNrB6Z5v58r22XVw",
+  },
   robots: {
     index: true,
     follow: true,
